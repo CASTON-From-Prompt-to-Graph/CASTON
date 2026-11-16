@@ -1,0 +1,12 @@
+[
+  {
+    "path": "data/training/NER_train173_0520.jsonl",
+    "format": "JSONL",
+    "records": 173
+  },
+  {
+    "path": "data/training/RE_train96_0528_no_sibling.jsonl",
+    "format": "JSONL",
+    "records": 96
+  }
+]
