@@ -19,8 +19,6 @@ CASTON/
 └── README.md
 ```
 
-`ICL/NER.py` and `ICL/RE.py` are currently empty placeholders. The repository does not yet provide an executable end-to-end ICL extraction pipeline. `triple2onto.py` is a separate ontology-conversion script supplied by He Tan and retained without changes.
-
 ## Training datasets
 
 | Task | File | Records |
@@ -43,6 +41,8 @@ from pathlib import Path
 path = Path("dataset/train/NER_train173_0520.jsonl")
 records = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
 ```
+
+Run the scripts in ICL with the corresponding data path for term/relation extraction, respectively. 
 
 ## Ontology conversion with triple2onto.py
 
@@ -78,7 +78,7 @@ python triple2onto.py
 
 ### Generated files and implementation notes
 
-Running the script writes `CastOnto.owl` (RDF/XML), `CastOnto.nt` (N-Triples), `CastOnto.ttl` (Turtle), and `CastOnto.jsonld` (JSON-LD) into the working directory. A temporary `CastOnto_ns.nt` is removed at the end. Existing files with these names may be overwritten. Generated ontology files are not distributed in this repository.
+Running the script writes `CastOnto.owl` (RDF/XML), `CastOnto.nt` (N-Triples), `CastOnto.ttl` (Turtle), and `CastOnto.jsonld` (JSON-LD) into the working directory. Existing files with these names may be overwritten. Generated ontology files are not distributed in this repository.
 
 The ontology IRI is `http://inmost-research.org/ontologies/caston#`. The later namespace-binding call uses `http://inmost.org/ontologies/caston#`; binding a prefix does not rewrite the ontology IRIs. This difference is retained from the supplied script. The property annotation `altLabel` is currently appended to the property's regular label list. Users should review these conventions for their intended ontology release.
 
