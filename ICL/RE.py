@@ -1,4 +1,4 @@
-"""Standalone casting extraction: AnglE retrieval + OpenAI ICL inference."""
+"""Casting extraction: AnglE retrieval + OpenAI ICL inference."""
 
 import argparse
 import json
